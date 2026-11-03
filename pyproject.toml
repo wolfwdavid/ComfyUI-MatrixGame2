@@ -1,0 +1,13 @@
+[project]
+name = "comfyui-matrixgame2"
+description = "Matrix-Game 2.0 (Skywork, MIT) interactive world model as ComfyUI nodes: image + keyboard/camera actions -> frames, with worlds kept resident between prompts."
+version = "0.1.0"
+license = { text = "MIT" }
+dependencies = ["diffusers>=0.36.0", "einops", "safetensors", "ftfy", "regex", "transformers", "tqdm"]
+
+[project.urls]
+Repository = "https://github.com/wolfwdavid/ComfyUI-MatrixGame2"
+
+[tool.comfy]
+PublisherId = "wolfwdavid"
+DisplayName = "ComfyUI-MatrixGame2"
