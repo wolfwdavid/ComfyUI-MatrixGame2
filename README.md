@@ -42,9 +42,17 @@ git clone https://github.com/wolfwdavid/ComfyUI-MatrixGame2
 pip install -r ComfyUI-MatrixGame2/requirements.txt
 ```
 
-Needs a CUDA GPU with about 16 GB free (bf16 transformer 3.6 GB, CLIP, VAE, plus ~1.7 GB of caches
-per world). Tested on the Comfy developer platform (torch 2.12 + CUDA 13, ComfyUI 0.37, RTX PRO 6000
-MIG slice). CPU runs work for development with a reduced config but are slow.
+Needs a CUDA GPU, roughly 16 GB free by estimate (bf16 transformer 3.6 GB, CLIP, VAE, plus ~1.7 GB of
+caches per world). CPU runs work for development with a reduced config but are slow.
+
+## Status
+
+- Verified on CPU: the full pipeline with random weights and a 1-layer config (first block 9 frames,
+  next block 12 frames, session resume, world-full error, restart), and node registration plus graph
+  validation in ComfyUI 0.37.
+- Built into a Comfy developer platform release (torch 2.12 + CUDA 13, ComfyUI 0.37, RTX PRO 6000 MIG
+  slice): the pack and its requirements install cleanly on the worker.
+- Not yet run on a GPU with the real weights, so speed per block and image quality are unmeasured.
 
 ## What is vendored and changed
 
